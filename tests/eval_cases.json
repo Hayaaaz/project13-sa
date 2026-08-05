@@ -1,0 +1,42 @@
+[
+  {
+    "name": "lockdown-basic",
+    "question": "What is the lockdown procedure?",
+    "expected": "In a lockdown, stay in your room, lock the door, and keep students away from windows."
+  },
+  {
+    "name": "lockdown-variant",
+    "question": "During a lockdown, what should a teacher do?",
+    "expected": "In a lockdown, stay in your room, lock the door, and keep students away from windows."
+  },
+  {
+    "name": "fire-basic",
+    "question": "What do we do in a fire drill?",
+    "expected": "During a fire drill, line up at the door and exit the building calmly."
+  },
+  {
+    "name": "fire-variant",
+    "question": "Describe the fire drill procedure.",
+    "expected": "During a fire drill, line up at the door and exit the building calmly."
+  },
+  {
+    "name": "late-basic",
+    "question": "What is the policy for late students?",
+    "expected": "Students arriving more than 10 minutes late must check in at the office."
+  },
+  {
+    "name": "late-variant",
+    "question": "If a student is late, what should they do?",
+    "expected": "Students arriving more than 10 minutes late must check in at the office."
+  },
+  {
+    "name": "unknown-basic",
+    "question": "What is the lunch menu?",
+    "expected": "I don't know. Please check the school handbook."
+  },
+  {
+    "name": "unknown-variant",
+    "question": "Tell me about the cafeteria food.",
+    "expected": "I don't know. Please check the school handbook."
+  }
+]
