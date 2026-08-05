@@ -25,22 +25,22 @@ The repository follows a clean, professional layout suitable for CI/CD
 automation:
 
 project13-sa/
-│
-├── src/
-│   ├── bot.py
-│   ├── main.py
-│   └── __init__.py
-│
-├── tests/
-│   ├── test_bot.py
-│   ├── eval_cases.json
-│   └── judge.py
-│
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-│
-└── requirements.txt
+
+ src/
+   bot.py
+   main.py
+   __init__.py
+
+ tests/
+   test_bot.py
+   eval_cases.json
+   judge.py
+
+ .github/
+   workflows/
+   ci.yml
+
+ requirements.txt
 
 This structure is visible in the regression branch of the repository.
 
