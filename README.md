@@ -36,8 +36,11 @@ GitHub Actions pipeline:
 5. Eval gate  
 
 Uses least-privilege permissions:
+
 permissions:
+
 contents: read
+
 
 
 ## Result
