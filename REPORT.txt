@@ -58,7 +58,6 @@ dataset. The bot is designed to be predictable so that unit tests and
 eval scoring remain stable.
 
 
-
 4. UNIT TESTS (tests/test_bot.py)
 --------------------------------------------------------------------
 The test suite verifies that the bot returns the exact expected strings 
@@ -70,3 +69,99 @@ Tests include:
 - test_fire_drill()
 - test_late_policy()
 
+
+5. EVAL DATASET (tests/eval_cases.json)
+--------------------------------------------------------------------
+The eval dataset contains multiple cases. Each case includes:
+- A question
+- The expected grounded answer
+
+The dataset ensures that the bot’s responses remain consistent and 
+aligned with the expected safety procedures.
+
+
+6. EVAL GATE (tests/judge.py)
+--------------------------------------------------------------------
+The eval gate enforces a groundedness threshold of 0.85. It performs 
+the following steps:
+
+1. Loads all eval cases  
+2. Computes similarity scores between the bot’s answer and the expected answer  
+3. Averages the scores  
+4. Fails the build if the average score is below 0.85  
+
+This mechanism prevents hallucinations and ensures safe, predictable 
+behavior from the bot.
+
+
+7. CI/CD PIPELINE (.github/workflows/ci.yml)
+--------------------------------------------------------------------
+The CI/CD pipeline runs on pushes to both main and regression branches. 
+It uses least‑privilege permissions:
+
+permissions:
+  contents: read
+
+The pipeline includes the following steps:
+1. Checkout code  
+2. Set up Python  
+3. Install dependencies  
+4. Lint  
+5. Unit tests  
+6. Secret scan  
+7. Eval gate  
+
+This ensures that any regression or incorrect bot answer is detected 
+before merging.
+
+
+8. DEBUGGING PROCESS
+--------------------------------------------------------------------
+During development, several CI failures occurred. These failures were 
+part of the learning process and helped refine the pipeline.
+
+Failure 1 — Workflow not triggering  
+Fix: Added regression branch to workflow triggers.
+
+Failure 2 — Syntax error in bot.py  
+Fix: Corrected indentation.
+
+Failure 3 — Missing requirements.txt  
+Fix: Added pytest to requirements.txt.
+
+Failure 4 — Missing src/ and tests/ directories  
+Fix: Added and committed both directories.
+
+Failure 5 — Regression failure due to incorrect bot answer  
+Fix: Restored the correct lockdown response.
+
+
+9. SUCCESSFUL CI RUN
+--------------------------------------------------------------------
+After resolving all issues, the final CI run passed successfully. All 
+steps completed without errors, unit tests passed, and the eval gate 
+reported a groundedness score above the threshold.
+
+
+10. AGENT-LOG.TXT SUMMARY
+--------------------------------------------------------------------
+The agent log documents the evaluation process. It includes:
+- Each question asked  
+- The bot’s answer  
+- The similarity score  
+- Pass/fail result  
+
+The final evaluation achieved a perfect groundedness score of 1.000, 
+indicating that all responses matched the expected answers.
+
+
+11. CONCLUSION
+--------------------------------------------------------------------
+This project demonstrates a complete CI/CD pipeline for an AI 
+application. The pipeline enforces correctness through unit tests, 
+groundedness through an eval gate, and safety through least‑privilege 
+permissions. The regression branch workflow ensures that unsafe or 
+incorrect changes are caught before reaching production.
+
+The final result is a stable, automated, and reliable pipeline suitable 
+for real‑world AI development.
