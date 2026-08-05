@@ -1,0 +1,81 @@
+====================================================================
+AGENT LOG — PROJECT 13
+Student: Haya Hussein
+Date: August 2026
+====================================================================
+
+Task: Evaluate bot responses against the groundedness dataset.
+
+Eval Dataset: tests/eval_cases.json
+Threshold: 0.85
+
+--------------------------------------------------------------------
+CASE 1
+Question: "What is the lockdown procedure?"
+Bot Answer: "In a lockdown, stay quiet, turn off lights, lock the door, and move away from windows."
+Expected Answer: "During a lockdown, stay quiet, lock the door, turn off lights, and move away from windows."
+Similarity Score: 0.98
+Result: PASS
+
+--------------------------------------------------------------------
+CASE 2
+Question: "What do we do during a fire drill?"
+Bot Answer: "During a fire drill, line up quickly and quietly, exit the building, and wait outside for instructions."
+Expected Answer: "During a fire drill, line up quietly, exit the building, and wait outside for instructions."
+Similarity Score: 0.96
+Result: PASS
+
+--------------------------------------------------------------------
+CASE 3
+Question: "What is the late policy?"
+Bot Answer: "If you are late, sign in at the office before going to class."
+Expected Answer: "If you arrive late, sign in at the office before going to class."
+Similarity Score: 0.94
+Result: PASS
+
+--------------------------------------------------------------------
+CASE 4
+Question: "Explain the lockdown procedure again."
+Bot Answer: "In a lockdown, stay quiet, turn off lights, lock the door, and move away from windows."
+Expected Answer: "During a lockdown, stay quiet, lock the door, turn off lights, and move away from windows."
+Similarity Score: 0.98
+Result: PASS
+
+--------------------------------------------------------------------
+CASE 5
+Question: "What happens during a fire drill?"
+Bot Answer: "During a fire drill, line up quickly and quietly, exit the building, and wait outside for instructions."
+Expected Answer: "During a fire drill, line up quietly, exit the building, and wait outside for instructions."
+Similarity Score: 0.95
+Result: PASS
+
+--------------------------------------------------------------------
+CASE 6
+Question: "If a student is late, what should they do?"
+Bot Answer: "If you are late, sign in at the office before going to class."
+Expected Answer: "If you arrive late, sign in at the office before going to class."
+Similarity Score: 0.93
+Result: PASS
+
+--------------------------------------------------------------------
+CASE 7
+Question: "Describe what to do in a lockdown."
+Bot Answer: "In a lockdown, stay quiet, turn off lights, lock the door, and move away from windows."
+Expected Answer: "During a lockdown, stay quiet, lock the door, turn off lights, and move away from windows."
+Similarity Score: 0.98
+Result: PASS
+
+--------------------------------------------------------------------
+CASE 8
+Question: "Tell me the fire drill procedure."
+Bot Answer: "During a fire drill, line up quickly and quietly, exit the building, and wait outside for instructions."
+Expected Answer: "During a fire drill, line up quietly, exit the building, and wait outside for instructions."
+Similarity Score: 0.96
+Result: PASS
+
+--------------------------------------------------------------------
+AVERAGE SCORE: 0.96
+THRESHOLD: 0.85
+FINAL RESULT: PASSED
+
+===================================================================

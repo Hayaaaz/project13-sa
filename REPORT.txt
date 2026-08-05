@@ -1,0 +1,72 @@
+====================================================================
+PROJECT 13 — A Pipeline for an AI Application
+Student: Haya Hussein
+Course: System Administration & Maintenance
+Date: August 2026
+====================================================================
+
+1. INTRODUCTION
+--------------------------------------------------------------------
+This project implements a complete CI/CD pipeline for a small AI 
+application. The goal is to ensure that every change to the bot is 
+automatically tested, evaluated for correctness, and validated against 
+a groundedness threshold before being accepted. The pipeline enforces 
+quality, prevents regressions, and demonstrates DevOps principles such 
+as automation, least privilege, and continuous verification.
+
+The application consists of a simple question‑answering bot with fixed 
+responses for school safety procedures. The pipeline evaluates the bot 
+using deterministic unit tests and a similarity‑based eval gate.
+
+
+2. REPOSITORY STRUCTURE
+--------------------------------------------------------------------
+The repository follows a clean, professional layout suitable for CI/CD 
+automation:
+
+project13-sa/
+│
+├── src/
+│   ├── bot.py
+│   ├── main.py
+│   └── __init__.py
+│
+├── tests/
+│   ├── test_bot.py
+│   ├── eval_cases.json
+│   └── judge.py
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+│
+└── requirements.txt
+
+This structure is visible in the regression branch of the repository.
+
+
+3. BOT IMPLEMENTATION (src/bot.py)
+--------------------------------------------------------------------
+The bot provides deterministic responses for three required questions:
+
+- Lockdown procedure  
+- Fire drill procedure  
+- Late policy  
+
+These responses are intentionally simple and fully grounded in the eval 
+dataset. The bot is designed to be predictable so that unit tests and 
+eval scoring remain stable.
+
+
+
+4. UNIT TESTS (tests/test_bot.py)
+--------------------------------------------------------------------
+The test suite verifies that the bot returns the exact expected strings 
+for each question. These tests ensure that basic regressions are caught 
+before the eval gate runs.
+
+Tests include:
+- test_lockdown()
+- test_fire_drill()
+- test_late_policy()
+
