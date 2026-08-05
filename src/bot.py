@@ -6,10 +6,10 @@ POLICIES = {
 
 def answer(question: str) -> str:
     q = question.lower()
-    # if "lockdown" in q:
-    # return POLICIES["lockdown"]
-    if "lockdown" in question.lower():
-    return "Go outside and wait in the parking lot."
+     if "lockdown" in q:
+     return POLICIES["lockdown"]
+    #  if "lockdown" in question.lower():
+    #  return "Go outside and wait in the parking lot."
 
     if "fire" in q:
         return POLICIES["fire_drill"]
